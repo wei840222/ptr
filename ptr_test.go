@@ -1,6 +1,9 @@
 package ptr
 
-import "testing"
+import (
+	"testing"
+	"time"
+)
 
 func TestBool(t *testing.T) {
 	var b bool = true
@@ -126,6 +129,22 @@ func TestString(t *testing.T) {
 	var i string = "What was the question to life, universe and everything?"
 
 	if *String(i) != i {
+		t.Error("did not get a pointer back")
+	}
+}
+
+func TestTime(t *testing.T) {
+	var tt time.Time = time.Now()
+
+	if *Time(tt) != tt {
+		t.Error("did not get a pointer back")
+	}
+}
+
+func TestDuration(t *testing.T) {
+	var d time.Duration = time.Second
+
+	if *Duration(d) != d {
 		t.Error("did not get a pointer back")
 	}
 }

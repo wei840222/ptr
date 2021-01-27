@@ -1,5 +1,7 @@
 package ptr
 
+import "time"
+
 // Bool returns a pointer to a boolean.
 func Bool(b bool) *bool {
 	return &b
@@ -78,4 +80,14 @@ func Uint32(i uint32) *uint32 {
 // Uint64 returns a pointer to an uint.
 func Uint64(i uint64) *uint64 {
 	return &i
+}
+
+// Time returns a pointer to a time.Time.
+func Time(t time.Time) *time.Time {
+	return &t
+}
+
+// Duration returns a pointer to a time.Duration.
+func Duration(d time.Duration) *time.Duration {
+	return &d
 }

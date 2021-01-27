@@ -1,0 +1,21 @@
+name: test
+on:
+  push:
+    branches:
+    - master
+  pull_request:
+jobs:
+  build:
+    strategy:
+      matrix:
+        platform:
+        - ubuntu-latest
+    runs-on: ${{ matrix.platform }}
+    container: golang:1.15
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v1
+
+    - name: Tesing
+      run: |
+        go test -v ./...
