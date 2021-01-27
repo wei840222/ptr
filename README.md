@@ -1,5 +1,7 @@
 # ptr
 
+![UT Status](https://github.com/wei840222/ptr/workflows/UT/badge.svg)
+
 The `ptr` package gives you some basic helpers for working with pointers in Go.
 The package is simply intended to make it easy to create pointers to things.
 E.g. instead of writing:
