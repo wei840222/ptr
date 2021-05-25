@@ -57,6 +57,14 @@ func String(s string) *string {
 	return &s
 }
 
+// StringNotEmpty returns a pointer to a string but nil when string is empty.
+func StringNotEmpty(s string) *string {
+	if s == "" {
+		return nil
+	}
+	return &s
+}
+
 // Uint returns a pointer to an uint.
 func Uint(i uint) *uint {
 	return &i

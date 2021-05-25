@@ -126,10 +126,23 @@ func TestRune(t *testing.T) {
 }
 
 func TestString(t *testing.T) {
-	var i string = "What was the question to life, universe and everything?"
+	var s string = "What was the question to life, universe and everything?"
 
-	if *String(i) != i {
+	if *String(s) != s {
 		t.Error("did not get a pointer back")
+	}
+}
+
+func TestStringNotEmpty(t *testing.T) {
+	var s string = "What was the question to life, universe and everything?"
+
+	if *StringNotEmpty(s) != s {
+		t.Error("did not get a pointer back")
+	}
+
+	var es string
+	if StringNotEmpty(es) != nil {
+		t.Error("did not get nil pointer when string is empty")
 	}
 }
 
